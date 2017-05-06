@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="smyy.qsearch.activity.SettingsActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Günlük bildirim almak ister misin?"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp" />
+
+    <RadioButton
+        android:id="@+id/rBtnMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="39dp"
+        android:checked="false"
+        android:text="Meal"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:id="@+id/rBtnSunnet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sünnet"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/rBtnHadis"
+        android:layout_alignLeft="@+id/rBtnHadis"
+        android:layout_alignStart="@+id/rBtnHadis" />
+
+    <RadioButton
+        android:id="@+id/rBtnHadis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Hadis"
+        android:layout_below="@+id/rBtnMeal"
+        android:layout_alignRight="@+id/rBtnMeal"
+        android:layout_alignEnd="@+id/rBtnMeal" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rBtnMeal"
+        android:layout_alignStart="@+id/rBtnMeal"
+        android:layout_below="@+id/rBtnSunnet"
+        android:layout_marginTop="25dp"
+        android:text="Kaydet" />
+
+</RelativeLayout>

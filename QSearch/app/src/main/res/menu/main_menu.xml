@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item android:id="@+id/action_add_bookmark"
+        android:icon="@mipmap/bookmark_white"
+        android:title="AddBookmarks"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_delete"
+        android:icon="@mipmap/delete"
+        android:title="Delete"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_settings"
+        android:icon="@mipmap/settings"
+        android:title="Settings"
+        app:showAsAction="always"/>
+
+</menu>

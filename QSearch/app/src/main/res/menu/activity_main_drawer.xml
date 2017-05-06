@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_meal"
+            android:title="Meal" />
+        <item
+            android:id="@+id/nav_tefsir"
+            android:title="Tefsir" />
+        <item
+            android:id="@+id/nav_hadis"
+            android:title="Hadis" />
+
+        <item
+            android:id="@+id/nav_sünnet"
+            android:title="Sünnet" />
+
+
+    </group>
+
+</menu>

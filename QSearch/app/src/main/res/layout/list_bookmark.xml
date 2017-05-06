@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D8D8"
+    android:weightSum="10"
+    android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="8"
+            android:background="@drawable/rounded_border_edittext"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
