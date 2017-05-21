@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import okhttp3.MediaType;
@@ -16,7 +17,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import smyy.qsearch.helper.Config;
 import smyy.qsearch.interfaces.RetroInterface;
+import smyy.qsearch.model.BotMessage;
 import smyy.qsearch.model.Register;
+import smyy.qsearch.model.ResultBot;
 
 /**
  * Created by Sümeyye on 1.5.2017.
@@ -25,17 +28,18 @@ import smyy.qsearch.model.Register;
 public class CallBack {
 
     RetroInterface retroInterface;
+    RetroInterface retroInterfaceBot;
     Context context;
 
     public CallBack(Context context) {
         retroInterface = ServiceGenerator.createService(RetroInterface.class);
+
         this.context = context;
     }
 
     public void Register(final String regID) {
         Call<Register> call;
         call = retroInterface.Register(regID);
-
         call.enqueue(new Callback<Register>() {
             @Override
             public void onResponse(Call<Register> call, Response<Register> response) {
@@ -91,4 +95,20 @@ public class CallBack {
         });
     }
 
+    public void sendMessage(final String text) {
+        String recipientId = "984941DA1767E119E6184E6E56E566E0";
+        String token = "57ed2268e4b081dd2c1bd8a7";
+        String response=null;
+        String json_data = "{\n" +
+                "            \"recipientId\": \"984941DA1767E119E6184E6E56E566E0\",\n" +
+                "            \"token\": \"590c6ed1e4b00f3ba094f56c\",\n" +
+                "            \"text\": \"merhaba\"\n" +
+                "        }";
+        try {
+            response = ServiceGenerator.post("http://dahi.ai/category/sendMessage", json_data);
+            response.length();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

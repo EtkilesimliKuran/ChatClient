@@ -29,6 +29,7 @@ import smyy.qsearch.adapter.ChatAdapter;
 import smyy.qsearch.helper.Database;
 import smyy.qsearch.helper.QSearchApplication;
 import smyy.qsearch.model.Message;
+import smyy.qsearch.servis.CallBack;
 
 public class FragmentMeal extends Fragment {
 
@@ -41,6 +42,7 @@ public class FragmentMeal extends Fragment {
     public static List<Message> messages;
     public static List<Message> source_messages;
     ChatAdapter chatAdapter;
+    CallBack callBack;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -73,7 +75,6 @@ public class FragmentMeal extends Fragment {
             @Override
             public void onClick(View view) {
                 final String message = messageEdit.getText().toString().trim();
-
                 if (TextUtils.isEmpty(message)) {
                     Toast.makeText(getContext(), "Lütfen bir mesaj girin.", Toast.LENGTH_SHORT).show();
                     return;
@@ -86,18 +87,19 @@ public class FragmentMeal extends Fragment {
                         message1.setSourceType(type);
                         addMessage(message1);
                         int source_type;
-                        if(type==0)
-                            source_type=1;
-                        else if(type==1)
-                            source_type=0;
+                        if (type == 0)
+                            source_type = 1;
+                        else if (type == 1)
+                            source_type = 0;
                         else
-                            source_type=type;
+                            source_type = type;
 
                         JSONObject obj = new JSONObject();
                         obj.put("content", message);
                         obj.put("source", source_type);
-
-                        mSocket.emit("send_msg", obj);
+                        callBack = new CallBack(getContext());
+                        callBack.sendMessage(message);
+                        //mSocket.emit("send_msg", obj);
 
                     } catch (Exception e) {
                         e.printStackTrace();

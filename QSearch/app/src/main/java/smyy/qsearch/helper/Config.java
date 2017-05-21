@@ -7,6 +7,7 @@ package smyy.qsearch.helper;
 public class Config {
 
     public static String baseUrl="https://mysterious-temple-11049.herokuapp.com";
+    public static String botUrl="http://dahi.ai";
     public static final int NOTIFICATION_ID = 100;
     public static final int NOTIFICATION_ID_BIG_IMAGE = 101;
     public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";
