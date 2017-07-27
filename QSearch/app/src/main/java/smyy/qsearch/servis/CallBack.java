@@ -96,13 +96,13 @@ public class CallBack {
     }
 
     public void sendMessage(final String text) {
-        String recipientId = "984941DA1767E119E6184E6E56E566E0";
-        String token = "57ed2268e4b081dd2c1bd8a7";
+        String recipientId = "";
+        String token = "";
         String response=null;
         String json_data = "{\n" +
-                "            \"recipientId\": \"984941DA1767E119E6184E6E56E566E0\",\n" +
-                "            \"token\": \"590c6ed1e4b00f3ba094f56c\",\n" +
-                "            \"text\": \"merhaba\"\n" +
+                "            \"recipientId\": \"\",\n" +
+                "            \"token\": \"\",\n" +
+                "            \"text\": \"\"\n" +
                 "        }";
         try {
             response = ServiceGenerator.post("http://dahi.ai/category/sendMessage", json_data);
